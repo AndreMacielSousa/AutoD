@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoD", "AutoD\AutoD.csproj", "{0DE4AABB-9443-4D2F-A53C-111608F581CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DE4AABB-9443-4D2F-A53C-111608F581CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE4AABB-9443-4D2F-A53C-111608F581CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE4AABB-9443-4D2F-A53C-111608F581CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE4AABB-9443-4D2F-A53C-111608F581CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACBCBDFB-924F-4951-9280-A5F2E0E3F211}
+	EndGlobalSection
+EndGlobal
