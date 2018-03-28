@@ -3,7 +3,7 @@
     public abstract class AbstractRenderer
     {
         public abstract void DrawBoard();
-
+        
     }
 }
 

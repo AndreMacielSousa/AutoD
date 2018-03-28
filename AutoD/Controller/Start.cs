@@ -9,7 +9,15 @@ namespace AutoD
         static void Main()
         {
             using (game = new AutoDjogo())
+            {
                 game.Run();
+            }
+
+           
         }
+
+       
+    
     }
 }
+
