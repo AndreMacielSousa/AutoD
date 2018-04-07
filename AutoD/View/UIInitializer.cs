@@ -11,7 +11,7 @@ namespace AutoD.View.UI
         public static Background CreateBackground(ContentManager content)
         {
             Texture2D backgroundImage = content.Load<Texture2D>("Pista0");
-            Rectangle backgroundRectangle = new Rectangle(0, 0, 668, 1600);
+            Rectangle backgroundRectangle = new Rectangle(0, 0, 700, 700);
             Sprite backgroundSprite = new Sprite(backgroundRectangle, backgroundImage);
 
             Background background = new Background(backgroundSprite);

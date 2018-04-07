@@ -23,8 +23,8 @@
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            graphics.PreferredBackBufferHeight = 668;
-            graphics.PreferredBackBufferWidth = 1600;
+            graphics.PreferredBackBufferHeight = 700;
+            graphics.PreferredBackBufferWidth = 700;
 
         }
 
@@ -51,7 +51,7 @@
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             Elapsed = (double)gameTime.ElapsedGameTime.TotalSeconds;
-        //    StateMachine.CurrentState.Execute();
+            StateMachine.CurrentState.Execute();
             base.Update(gameTime);
         }
 
@@ -59,7 +59,7 @@
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             SpriteBatch.Begin();
-         //   StateMachine.CurrentState.Draw(renderer);
+            StateMachine.CurrentState.Draw(renderer);
             SpriteBatch.End();
             base.Draw(gameTime);
         }
