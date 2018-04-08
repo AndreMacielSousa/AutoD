@@ -23,5 +23,8 @@ namespace AutoD.Controller.States
         {
             renderer.DrawBoard();
         }
+
+
+
     }
 }
