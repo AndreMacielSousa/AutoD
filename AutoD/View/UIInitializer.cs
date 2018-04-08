@@ -36,7 +36,7 @@ namespace AutoD.View.UI
             Texture2D endTurnActive = content.Load<Texture2D>("EndTurn");
             Texture2D endTurnClicked = content.Load<Texture2D>("EndTurnClicked");
             Texture2D endTurnHover = content.Load<Texture2D>("EndTurnHover");
-            Rectangle endTurnRectangle = new Rectangle(450, 515, 80, 80);
+            Rectangle endTurnRectangle = new Rectangle(450, 450, 120, 120);
 
             Sprite endTurnSprite = new Sprite(endTurnRectangle, endTurnActive);
             Button buyButton = new Button(endTurnSprite, endTurnHover, endTurnClicked, endTurnActive);
@@ -61,7 +61,7 @@ namespace AutoD.View.UI
         public static PlayerUI CreatePlayer(ContentManager content, int index)
         {
             Texture2D playerImage = content.Load<Texture2D>("pawn" + index.ToString());
-            Rectangle playerRectangle = new Rectangle(620, 600 + index * 30, 28, 28);
+            Rectangle playerRectangle = new Rectangle(620, 590 + index * 33, 30, 30);
             Sprite playerSprite = new Sprite(playerRectangle, playerImage);
             PlayerUI playerUI = new PlayerUI(playerSprite, index);
             return playerUI;

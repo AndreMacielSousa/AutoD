@@ -22,30 +22,63 @@ namespace AutoD.View.Renderers
         public Dice FirstDice;
         public Dice SecondDice;
 
+        public List<PlayerUI> PlayersUI;
+        public PlayerUI FirstPlayer;
+        public PlayerUI SecondPlayer;
+        private int Velocity;
+        private Rectangle TileDestination;
+        public bool ShouldPlayerMove;
 
         private Background background;
 
         //todo
-        public bool ShouldPlayerMove;
-
+        public Rectangle[] TileColliders;
         private SpriteFont font;
         public string NotificationText;
 
         public MonoGameRenderer()
         {
             this.background = UIInitializer.CreateBackground(Content);
+            this.RollButton = UIInitializer.CreateRollButton(Content);
+            this.EndTurnButton = UIInitializer.CreateEndTurnButton(Content);
+            this.FirstDice = UIInitializer.CreateDice(Content, 1);
+            this.SecondDice = UIInitializer.CreateDice(Content, 2);
+            this.FirstPlayer = UIInitializer.CreatePlayer(Content, 1);
+            this.SecondPlayer = UIInitializer.CreatePlayer(Content, 2);
 
+
+            this.PlayersUI = new List<PlayerUI>();
+            this.PlayersUI.Add(FirstPlayer);
+            this.PlayersUI.Add(SecondPlayer);
+
+           
+            this.TileColliders = UIInitializer.CreateTileColliders();
+            this.Velocity = 400;
+            this.ShouldPlayerMove = false;
 
             //Test
+
             this.NotificationText = "AutoD BRRRRRRRumm";
             this.font = Content.Load<SpriteFont>("Font");
-                        
+
+
         }
 
         public override void DrawBoard()
         {
             this.SpriteBatch = Start.game.SpriteBatch;
             background.Draw(SpriteBatch);
+            RollButton.Draw(SpriteBatch);
+            EndTurnButton.Draw(SpriteBatch);
+
+            FirstDice.Draw(SpriteBatch);
+            SecondDice.Draw(SpriteBatch);
+
+            foreach (var player in PlayersUI)
+            {
+                player.Draw(SpriteBatch);
+            }
+
 
             //Test
             SpriteBatch.DrawString(font, NotificationText, new Vector2(105, 105), Color.Black);
