@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.View.UI
+﻿namespace AutoD.View.UI
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,7 +7,7 @@ namespace AutoD.View.UI
     {
         public Button(Sprite sprite, Texture2D hoverImage, Texture2D clickedImage, Texture2D inactiveImage)
         {
-            this.Sprite = sprite;
+            Sprite = sprite;
             this.hoverImage = hoverImage;
             this.clickedImage = clickedImage;
             this.inactiveImage = inactiveImage;
@@ -26,22 +20,22 @@ namespace AutoD.View.UI
 
         public void ChangeToHoverImage()
         {
-            this.Sprite.Image = this.hoverImage;
+            Sprite.Image = hoverImage;
         }
 
         public void ChangeToClickedImage()
         {
-            this.Sprite.Image = this.clickedImage;
+            Sprite.Image = clickedImage;
         }
 
         public void ChangeToInactiveImage()
         {
-            this.Sprite.Image = this.inactiveImage;
+            Sprite.Image = inactiveImage;
         }
 
         public void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(this.Sprite.Image, this.Sprite.Rectangle, Color.White);
+            spritebatch.Draw(Sprite.Image, Sprite.Rectangle, Color.White);
         }
     }
 }

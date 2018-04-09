@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.View.UI
+﻿namespace AutoD.View.UI
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -16,13 +10,13 @@ namespace AutoD.View.UI
 
         public PlayerUI(Sprite sprite, int index)
         {
-            this.Sprite = sprite;
-            this.Index = index;
+            Sprite = sprite;
+            Index = index;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.Sprite.Image, this.Sprite.Rectangle, Color.White);
+            spriteBatch.Draw(Sprite.Image, Sprite.Rectangle, Color.White);
         }
     }
 }

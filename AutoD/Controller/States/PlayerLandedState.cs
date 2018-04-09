@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.Controller.States
+﻿namespace AutoD.Controller.States
 {
-    using View.Renderers;
-    using Model.Tiles;
     using Model;
     using View.UI;
     using Microsoft.Xna.Framework.Input;
@@ -21,8 +13,9 @@ namespace AutoD.Controller.States
         {
             int playerIndex = Board.CurrentPlayerIndex;
             var playerCurrentPosition = Board.players[playerIndex].CurrentPosition;
-            Tile currentTile = Board.allTiles[playerCurrentPosition];
-           
+            Start.game.renderer.PlayerOneLaps = Board.players[0].Laps + " Lap";
+            Start.game.renderer.PlayerTwoLaps = Board.players[1].Laps + " Lap";
+
             ActivateEndTurnButton();
 
         }

@@ -7,8 +7,8 @@
     {
         public Sprite(Rectangle rectangle, Texture2D image)
         {
-            this.Rectangle = rectangle;
-            this.Image = image;
+            Rectangle = rectangle;
+            Image = image;
         }
 
         public Rectangle Rectangle;

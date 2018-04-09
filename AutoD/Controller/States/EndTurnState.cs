@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.Controller.States
+﻿namespace AutoD.Controller.States
 {
-    using View.Renderers;
     using View.UI;
     using Microsoft.Xna.Framework.Input;
     using Model;

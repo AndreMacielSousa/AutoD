@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.Model.Tiles
+﻿namespace AutoD.Model.Tiles
 {
     using Interfaces;
 
@@ -13,7 +7,7 @@ namespace AutoD.Model.Tiles
     {
         public Tile(int index)
         {
-            this.Index = index;
+            Index = index;
             
         }
 

@@ -1,14 +1,10 @@
 ﻿namespace AutoD.Controller
 {
-    
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
-    using Microsoft.Xna.Framework.Content;
     using AutoD.View.Renderers;
-    using Controller;
-
-    using View.UI;
 
     public class AutoDjogo : Game
     {
@@ -27,9 +23,7 @@
             graphics.PreferredBackBufferWidth = 700;
 
         }
-
-
-
+        
         protected override void Initialize()
         {
             renderer = new MonoGameRenderer();

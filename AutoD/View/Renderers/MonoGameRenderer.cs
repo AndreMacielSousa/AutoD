@@ -1,14 +1,10 @@
-﻿
-namespace AutoD.View.Renderers
+﻿namespace AutoD.View.Renderers
 {
-
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using AutoD.View.UI;
-    using AutoD.Controller;
     using System.Collections.Generic;
-    using System.Linq;
 
     public class MonoGameRenderer : AbstractRenderer
     {
@@ -32,41 +28,45 @@ namespace AutoD.View.Renderers
         private Background background;
 
         //todo
+        public string PlayerOneLaps;
+        public string PlayerTwoLaps;
+
         public Rectangle[] TileColliders;
         private SpriteFont font;
         public string NotificationText;
 
         public MonoGameRenderer()
         {
-            this.background = UIInitializer.CreateBackground(Content);
-            this.RollButton = UIInitializer.CreateRollButton(Content);
-            this.EndTurnButton = UIInitializer.CreateEndTurnButton(Content);
-            this.FirstDice = UIInitializer.CreateDice(Content, 1);
-            this.SecondDice = UIInitializer.CreateDice(Content, 2);
-            this.FirstPlayer = UIInitializer.CreatePlayer(Content, 1);
-            this.SecondPlayer = UIInitializer.CreatePlayer(Content, 2);
+            background = UIInitializer.CreateBackground(Content);
+            RollButton = UIInitializer.CreateRollButton(Content);
+            EndTurnButton = UIInitializer.CreateEndTurnButton(Content);
+            FirstDice = UIInitializer.CreateDice(Content, 1);
+            SecondDice = UIInitializer.CreateDice(Content, 2);
+            FirstPlayer = UIInitializer.CreatePlayer(Content, 1);
+            SecondPlayer = UIInitializer.CreatePlayer(Content, 2);
 
 
-            this.PlayersUI = new List<PlayerUI>();
-            this.PlayersUI.Add(FirstPlayer);
-            this.PlayersUI.Add(SecondPlayer);
+            PlayersUI = new List<PlayerUI>();
+            PlayersUI.Add(FirstPlayer);
+            PlayersUI.Add(SecondPlayer);
 
-           
-            this.TileColliders = UIInitializer.CreateTileColliders();
-            this.Velocity = 200;
-            this.ShouldPlayerMove = false;
+
+            TileColliders = UIInitializer.CreateTileColliders();
+            Velocity = 200;
+            ShouldPlayerMove = false;
 
             //Test
 
-            this.NotificationText = "AutoD BRRRRRRRumm";
-            this.font = Content.Load<SpriteFont>("Font");
-
-
+            NotificationText = "AutoD BRRRRRRRumm";
+            PlayerOneLaps = "0 Lap";
+            PlayerTwoLaps = "0 Lap";
+            font = Content.Load<SpriteFont>("Font");
+            
         }
 
         public override void DrawBoard()
         {
-            this.SpriteBatch = Start.game.SpriteBatch;
+            SpriteBatch = Start.game.SpriteBatch;
             background.Draw(SpriteBatch);
             RollButton.Draw(SpriteBatch);
             EndTurnButton.Draw(SpriteBatch);
@@ -81,43 +81,43 @@ namespace AutoD.View.Renderers
 
 
             //Test
-            SpriteBatch.DrawString(font, NotificationText, new Vector2(105, 105), Color.Black);
+            SpriteBatch.DrawString(font, NotificationText, new Vector2(105, 105), Color.DarkMagenta);
+            SpriteBatch.DrawString(font, PlayerOneLaps, new Vector2(150, 525), Color.Blue);
+            SpriteBatch.DrawString(font, PlayerTwoLaps, new Vector2(150, 560), Color.Red);
         }
 
         public override void MovePlayer(int playerIndex, int currentPosition, int newPosition)
         {
 
             //TODO
-
-
-            /*
+                        
             PlayerUI currentPlayer = PlayersUI[playerIndex];
             TileDestination = TileColliders[newPosition];
             if (TileDestination.Contains(currentPlayer.Sprite.Rectangle))
             {
-                this.ShouldPlayerMove = false;
+                ShouldPlayerMove = false;
             }
             else
             {
 
                 if (currentPlayer.Sprite.Rectangle.Y > 606 && currentPlayer.Sprite.Rectangle.X > 30)
                 {
-                    currentPlayer.Sprite.Rectangle.X -= (int)(Velocity * EntryPoint.game.Elapsed);
+                    currentPlayer.Sprite.Rectangle.X -= (int)(Velocity * Start.game.Elapsed);
                 }
                 else if (currentPlayer.Sprite.Rectangle.X <= 50 && currentPlayer.Sprite.Rectangle.Y > 30)
                 {
-                    currentPlayer.Sprite.Rectangle.Y -= (int)(Velocity * EntryPoint.game.Elapsed);
+                    currentPlayer.Sprite.Rectangle.Y -= (int)(Velocity * Start.game.Elapsed);
                 }
                 else if (currentPlayer.Sprite.Rectangle.Y <= 50 && currentPlayer.Sprite.Rectangle.X < 650)
                 {
-                    currentPlayer.Sprite.Rectangle.X += (int)(Velocity * EntryPoint.game.Elapsed);
+                    currentPlayer.Sprite.Rectangle.X += (int)(Velocity * Start.game.Elapsed);
                 }
                 else if (currentPlayer.Sprite.Rectangle.X >= 620 && currentPlayer.Sprite.Rectangle.Y < 680)
                 {
-                    currentPlayer.Sprite.Rectangle.Y += (int)(Velocity * EntryPoint.game.Elapsed);
+                    currentPlayer.Sprite.Rectangle.Y += (int)(Velocity * Start.game.Elapsed);
                 }
             }
-            */
+            
         }
     }
 }

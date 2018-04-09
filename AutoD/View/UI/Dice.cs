@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.View.UI
+﻿namespace AutoD.View.UI
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -22,12 +16,12 @@ namespace AutoD.View.UI
 
         public void ChangeDiceImage(int diceValue)
         {
-            this.Sprite.Image = this.valueSprites[diceValue - 1];
+            Sprite.Image = valueSprites[diceValue - 1];
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.Sprite.Image, this.Sprite.Rectangle, Color.White);
+            spriteBatch.Draw(Sprite.Image, Sprite.Rectangle, Color.White);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace AutoD.View.UI
+﻿namespace AutoD.View.UI
 { 
         using Microsoft.Xna.Framework;
         using Microsoft.Xna.Framework.Content;
@@ -116,9 +114,8 @@ namespace AutoD.View.UI
             tileColliders[39] = new Rectangle(607, 93 + 8 * xIncrement, 93, xIncrement);
 
             return tileColliders;
-        }
+        } 
 
     }
-
-
+    
 }

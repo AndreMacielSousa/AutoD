@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoD.Controller.States
+﻿namespace AutoD.Controller.States
 {
     using View.Renderers;
 
@@ -12,7 +6,7 @@ namespace AutoD.Controller.States
     {
         public State(State nextState)
         {
-            this.NextState = nextState;
+            NextState = nextState;
         }
 
         public State NextState { get; set; }

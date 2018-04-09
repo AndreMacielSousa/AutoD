@@ -1,7 +1,5 @@
-﻿
-namespace AutoD.View.UI
+﻿namespace AutoD.View.UI
 {
-
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
 
@@ -16,7 +14,7 @@ namespace AutoD.View.UI
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(this.sprite.Image, this.sprite.Rectangle, Color.White);
+            spriteBatch.Draw(sprite.Image, sprite.Rectangle, Color.White);
         }
     }
 
