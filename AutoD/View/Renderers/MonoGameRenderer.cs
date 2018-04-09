@@ -53,7 +53,7 @@ namespace AutoD.View.Renderers
 
            
             this.TileColliders = UIInitializer.CreateTileColliders();
-            this.Velocity = 400;
+            this.Velocity = 200;
             this.ShouldPlayerMove = false;
 
             //Test
