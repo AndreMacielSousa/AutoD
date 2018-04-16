@@ -5,6 +5,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using AutoD.View.Renderers;
+    using System;
 
     public class AutoDjogo : Game
     {
@@ -21,6 +22,8 @@
             IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 700;
             graphics.PreferredBackBufferWidth = 700;
+
+            
 
         }
         
@@ -42,12 +45,23 @@
 
         protected override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            //EVENTS AN DELEGATES
+            renderer.Closed += new ClosedEventHandler(EscapePressd);
+            renderer.Change();
             Elapsed = (double)gameTime.ElapsedGameTime.TotalSeconds;
             StateMachine.CurrentState.Execute();
             base.Update(gameTime);
         }
+
+           //EVENTS AN DELEGATES
+        
+        void EscapePressd (object source, EventArgs e)
+        {
+            MonoGameRenderer renderer = (MonoGameRenderer)source;
+            Exit();
+        }
+
+
 
         protected override void Draw(GameTime gameTime)
         {
@@ -57,5 +71,7 @@
             SpriteBatch.End();
             base.Draw(gameTime);
         }
+
+
     }
 }

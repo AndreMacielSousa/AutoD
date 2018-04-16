@@ -4,6 +4,7 @@
         using Microsoft.Xna.Framework.Content;
         using Microsoft.Xna.Framework.Graphics;
 
+
     public static class UIInitializer
     {
         public static Background CreateBackground(ContentManager content)
@@ -114,7 +115,9 @@
             tileColliders[39] = new Rectangle(607, 93 + 8 * xIncrement, 93, xIncrement);
 
             return tileColliders;
-        } 
+        }
+
+        
 
     }
     

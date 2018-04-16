@@ -1,16 +1,23 @@
 ﻿namespace AutoD.View.Renderers
 {
     using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Input;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
     using AutoD.View.UI;
     using System.Collections.Generic;
+    using System;
+
+    //EVENTS AN DELEGATES
+    public delegate void ClosedEventHandler(object source, EventArgs args);
+
 
     public class MonoGameRenderer : AbstractRenderer
     {
+      
         private ContentManager Content = Start.game.Content;
         private SpriteBatch SpriteBatch;
-
+        
         //todo buttons and dice
         public Button RollButton;
         public Button EndTurnButton;
@@ -61,7 +68,8 @@
             PlayerOneLaps = "0 Lap";
             PlayerTwoLaps = "0 Lap";
             font = Content.Load<SpriteFont>("Font");
-            
+
+                                             
         }
 
         public override void DrawBoard()
@@ -84,6 +92,8 @@
             SpriteBatch.DrawString(font, NotificationText, new Vector2(105, 105), Color.DarkMagenta);
             SpriteBatch.DrawString(font, PlayerOneLaps, new Vector2(150, 525), Color.Blue);
             SpriteBatch.DrawString(font, PlayerTwoLaps, new Vector2(150, 560), Color.Red);
+
+
         }
 
         public override void MovePlayer(int playerIndex, int currentPosition, int newPosition)
@@ -119,5 +129,26 @@
             }
             
         }
+
+
+        //EVENTS AN DELEGATES
+
+        
+        public event ClosedEventHandler Closed;
+
+        public virtual void OnClosed(EventArgs e)
+        {
+            if (Closed != null)
+                Closed(this, e );
+        }
+
+        public void Change()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                OnClosed(new EventArgs());
+        }
+
     }
+
+
 }
