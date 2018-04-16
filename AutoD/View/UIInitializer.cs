@@ -37,9 +37,9 @@
             Rectangle endTurnRectangle = new Rectangle(450, 450, 120, 120);
 
             Sprite endTurnSprite = new Sprite(endTurnRectangle, endTurnActive);
-            Button buyButton = new Button(endTurnSprite, endTurnHover, endTurnClicked, endTurnActive);
+            Button endButton = new Button(endTurnSprite, endTurnHover, endTurnClicked, endTurnActive);
 
-            return buyButton;
+            return endButton;
         }
 
         public static Dice CreateDice(ContentManager content, int index)
