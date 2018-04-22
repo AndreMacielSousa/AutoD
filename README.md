@@ -11,6 +11,4 @@ Antes de iniciar acertam o numero de voltas ao circuito
 
 Alternadamente vão jogando um dado e movimentando o numero de casas correspondentes no tabuleiro
 
-Sempre que saí um 6, o outro jogador fica sem jogar, o mesmo será dizer que quem tirou 6 joga novamente.
-
 Ganha quem completar o numero de voltas em primeiro lugar.
