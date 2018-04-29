@@ -9,7 +9,7 @@
     {
         public static Background CreateBackground(ContentManager content)
         {
-            Texture2D backgroundImage = content.Load<Texture2D>("FInalBoard");
+            Texture2D backgroundImage = content.Load<Texture2D>("Board");
             Rectangle backgroundRectangle = new Rectangle(0, 0, 700, 700);
             Sprite backgroundSprite = new Sprite(backgroundRectangle, backgroundImage);
 
@@ -59,7 +59,7 @@
 
         public static PlayerUI CreatePlayer(ContentManager content, int index)
         {
-            Texture2D playerImage = content.Load<Texture2D>("pawn" + index.ToString());
+            Texture2D playerImage = content.Load<Texture2D>("car" + index.ToString());
             Rectangle playerRectangle = new Rectangle(620, 590 + index * 33, 30, 30);
             Sprite playerSprite = new Sprite(playerRectangle, playerImage);
             PlayerUI playerUI = new PlayerUI(playerSprite, index);
