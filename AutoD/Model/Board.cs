@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace AutoD.Model
+﻿namespace AutoD.Model
 {
     using Players;
-    using Tiles;
+    using System.Collections.Generic;
 
     public static class Board
     {
         public static List<Player> players;
-        public static List<Tile> allTiles;
         public static int CurrentPlayerIndex;
 
         public static void InitializeBoard()

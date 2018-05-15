@@ -18,20 +18,11 @@
         private Texture2D clickedImage { get; set; }
         private Texture2D inactiveImage { get; set; }
 
-        public void ChangeToHoverImage()
-        {
-            Sprite.Image = hoverImage;
-        }
+        public void ChangeToHoverImage() => Sprite.Image = hoverImage;
 
-        public void ChangeToClickedImage()
-        {
-            Sprite.Image = clickedImage;
-        }
+        public void ChangeToClickedImage() => Sprite.Image = clickedImage;
 
-        public void ChangeToInactiveImage()
-        {
-            Sprite.Image = inactiveImage;
-        }
+        public void ChangeToInactiveImage() => Sprite.Image = inactiveImage;
 
         public void Draw(SpriteBatch spritebatch)
         {

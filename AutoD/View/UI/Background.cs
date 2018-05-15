@@ -7,15 +7,9 @@
     {
         private Sprite sprite;
 
-        public Background(Sprite sprite)
-        {
-            this.sprite = sprite;
-        }
+        public Background(Sprite sprite) => this.sprite = sprite;
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(sprite.Image, sprite.Rectangle, Color.White);
-        }
+        public void Draw(SpriteBatch spriteBatch) => spriteBatch.Draw(sprite.Image, sprite.Rectangle, Color.White);
     }
 
 }

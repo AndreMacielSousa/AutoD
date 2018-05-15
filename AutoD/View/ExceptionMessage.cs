@@ -4,13 +4,7 @@
 
     class ExceptionMessage
     {
-        public static void Message(string message)
-        {
+        public static void Message(string message) => MessageBox.Show(message);
 
-            MessageBox.Show(message);
-           
-        }
-
-               
     }
 }

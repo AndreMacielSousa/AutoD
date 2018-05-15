@@ -11,7 +11,7 @@
         {
             Index = index;
         }
-
+                
         public void SetPosition(int newPosition)
         {
             int modifiedPosition = newPosition;
@@ -30,10 +30,7 @@
             
         }
 
-        public void IncrementLap(int lap)
-        {
-            Laps += lap;
-        }
+        public void IncrementLap(int lap) => Laps += lap;
 
         public int CurrentPosition { get; private set; } = 0;
 
@@ -41,6 +38,6 @@
 
         public int Laps { get; private set; } = INITIAL_LAPS;
 
-
+        public string Name => throw new System.NotImplementedException();
     }
 }

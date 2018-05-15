@@ -7,9 +7,6 @@
         public InitialState(State nextState)
             : base(nextState) { }
 
-        public override void Execute()
-        {
-            Board.InitializeBoard();
-        }
+        public override void Execute() => Board.InitializeBoard();
     }
 }

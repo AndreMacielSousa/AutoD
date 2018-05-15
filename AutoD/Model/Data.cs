@@ -7,7 +7,7 @@
         public void Verify()
         {
 
-            if (!File.Exists(@"Content\text99.txt"))
+            if (!File.Exists(@"Content\text98.txt"))
                 throw new FileNotFoundException("Ficheiro de configuração não encontrado!", "text99.txt");
 
             if (!File.Exists(@"Content\car1.xnb"))

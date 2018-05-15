@@ -51,13 +51,11 @@
             SecondDice = UIInitializer.CreateDice(Content, 2);
             FirstPlayer = UIInitializer.CreatePlayer(Content, 1);
             SecondPlayer = UIInitializer.CreatePlayer(Content, 2);
-
-
+            
             PlayersUI = new List<PlayerUI>();
             PlayersUI.Add(FirstPlayer);
             PlayersUI.Add(SecondPlayer);
-
-
+            
             TileColliders = UIInitializer.CreateTileColliders();
             Velocity = 200;
             ShouldPlayerMove = false;
@@ -68,8 +66,7 @@
             PlayerOneLaps = "0 Lap";
             PlayerTwoLaps = "0 Lap";
             font = Content.Load<SpriteFont>("Font");
-
-                                             
+                                                         
         }
 
         public override void DrawBoard()
@@ -86,14 +83,13 @@
             {
                 player.Draw(SpriteBatch);
             }
-
-
+            
             //Test
+
             SpriteBatch.DrawString(font, NotificationText, new Vector2(105, 105), Color.DarkMagenta);
             SpriteBatch.DrawString(font, PlayerOneLaps, new Vector2(150, 525), Color.Blue);
             SpriteBatch.DrawString(font, PlayerTwoLaps, new Vector2(150, 560), Color.Red);
-
-
+            
         }
 
         public override void MovePlayer(int playerIndex, int currentPosition, int newPosition)
@@ -130,16 +126,13 @@
             
         }
 
-
         //EVENTS AN DELEGATES
 
-        
         public event ClosedEventHandler Closed;
 
         public virtual void OnClosed(EventArgs e)
         {
-            if (Closed != null)
-                Closed(this, e );
+            Closed?.Invoke(this, e);
         }
 
         public void Change()

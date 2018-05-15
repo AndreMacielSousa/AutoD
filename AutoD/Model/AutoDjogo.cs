@@ -1,6 +1,5 @@
 ﻿namespace AutoD.Model
 {
-
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using AutoD.View.Renderers;
@@ -15,8 +14,7 @@
         public MonoGameRenderer renderer;
         private Data Data;
         public double Elapsed;
-
-
+        
         public AutoDjogo()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -24,9 +22,7 @@
             IsMouseVisible = true;
             graphics.PreferredBackBufferHeight = 700;
             graphics.PreferredBackBufferWidth = 700;
-
             
-
         }
 
         public void Tester()
@@ -53,10 +49,7 @@
 
         }
 
-        protected override void LoadContent()
-        {
-            SpriteBatch = new SpriteBatch(GraphicsDevice);
-        }
+        protected override void LoadContent() => SpriteBatch = new SpriteBatch(GraphicsDevice);
 
         protected override void Update(GameTime gameTime)
         {
@@ -68,9 +61,9 @@
             base.Update(gameTime);
         }
 
-           //EVENTS AN DELEGATES
-        
-        void EscapePressd (object source, EventArgs e)
+        //EVENTS AN DELEGATES
+
+        private void EscapePressd (object source, EventArgs e)
         {
             MonoGameRenderer renderer = (MonoGameRenderer)source;
             Exit();

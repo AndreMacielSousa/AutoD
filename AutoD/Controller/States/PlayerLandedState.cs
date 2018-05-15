@@ -17,7 +17,6 @@
             Start.game.renderer.PlayerTwoLaps = Board.players[1].Laps + " Lap";
 
             ActivateEndTurnButton();
-
         }
 
         private void ActivateEndTurnButton()
@@ -36,7 +35,6 @@
             if (Mouse.GetState().LeftButton == ButtonState.Pressed && mouseOverendTurn)
             {
                 endTurnButton.ChangeToClickedImage();
-               
                 StateMachine.ChangeState();
             }
         }

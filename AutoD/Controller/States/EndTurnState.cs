@@ -9,10 +9,8 @@
         public EndTurnState(State nextState)
             : base(nextState) { }
 
-        public override void Execute()
-        {
-            ActivateEndTurnButton();
-        }
+        public override void Execute() => ActivateEndTurnButton();
+
         private void ActivateEndTurnButton()
         {
             Button endTurnButton = Start.game.renderer.EndTurnButton;
